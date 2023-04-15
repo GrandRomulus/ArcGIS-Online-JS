@@ -1,4 +1,3 @@
-
 // Function that opens 'Rename' menu for layer
 function openRenameTextbox(layer){
     const button = layer.querySelector('.esri-layer-list__item-action[title="Rename"]');
@@ -16,7 +15,7 @@ function changeLayerString(list, newName) {
       textbox.value = newValue;
       alert("Layer change was successful.");
     } else {
-      alert("No match. The layer '" + currentValue + "' did not have " + newName + ". Try again.");
+      alert("No match. The layer '" + currentValue + "' did not contain '" + newName + "'. Try again.");
     }
   }
 
@@ -37,10 +36,11 @@ layerList.forEach((layer) => {
 // Delay declaration of variable to capture class values for layer name change and forEach loop
 setTimeout(() => {
   const inputList = document.querySelectorAll('.esri-title__authoring-form');
+  const newName = prompt("What part of the layer name would you like to delete?");
 
   // Loop that loops through input list to perform name change and submition
   inputList.forEach((list) => {
-      changeLayerString(list,'test24355');
+      changeLayerString(list, newName);
       submitNewNameString(list);
   });
 }, 2000); // Delay in milliseconds (2 seconds in this example)
