@@ -7,7 +7,7 @@ function openRenameTextbox(layer){
 // Function that deletes input string which is passed into 'newName'
 function changeLayerString(list, newName) {
     const textbox = list.querySelector('.esri-input[data-node-ref="editInputNode"]');
-    const currentValue = textbox.value.toLowerCase();;
+    const currentValue = textbox.value;
     const index = currentValue.indexOf(newName);
     
     if (index !== -1) {
@@ -28,7 +28,7 @@ function submitNewNameString(list){
 // Declaring layerList variable for forEach loop
 const layerList = document.querySelectorAll('.esri-layer-list__item');
 
-const newName = prompt("What part of the layer name would you like to delete?").toLowerCase();
+const newName = prompt("What part of the layer name would you like to delete?");
 
 // Loop that loops through layer list to open all layer name inputs
 layerList.forEach((layer) => {
