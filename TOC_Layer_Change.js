@@ -32,7 +32,17 @@ const newName = prompt("What part of the layer name would you like to delete?").
 
 // Loop that loops through layer list to open all layer name inputs
 layerList.forEach((layer) => {
-  openRenameTextbox(layer);
+  try {
+    openRenameTextbox(layer);
+  } catch (error) {
+    if (error instanceof TypeError) {
+      // Ignore TypeError and move on to the next iteration
+      return;
+    } else {
+      // Handle other types of errors as needed
+      console.error(error);
+    }
+  }
 });
 
 // Delay declaration of variable to capture class values for layer name change and forEach loop
