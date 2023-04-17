@@ -11,9 +11,14 @@ function openRenameTextbox(layer){
 function changeLayerString(list) {
     const textbox = list.querySelector('.esri-input[data-node-ref="editInputNode"]');
     const currentValue = textbox.value;
-    layersChanged += currentValue + '\n';
-    const newValue = currentValue.split('-', 1);
-    textbox.value = newValue;
+
+    if (currentValue.includes('-')) {
+        layersChanged += currentValue + '\n';
+        const newValue = currentValue.split('-', 1);
+        textbox.value = newValue;
+    } else {
+        return;
+    }
 };
 
 
