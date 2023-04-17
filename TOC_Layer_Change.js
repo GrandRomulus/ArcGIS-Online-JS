@@ -21,6 +21,7 @@ function changeLayerString(list, newName) {
       const newValue = currentValue.slice(0, index) + currentValue.slice(index + newName.length);
       textbox.value = newValue;
   }
+}
 
 // Function that submits what is in the textbox
 function submitNewNameString(list){
