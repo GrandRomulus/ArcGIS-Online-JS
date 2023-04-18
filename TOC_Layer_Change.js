@@ -14,7 +14,7 @@ function changeLayerString(list) {
 
     if (currentValue.includes('-')) {
         layersChanged += currentValue + '\n';
-        const newValue = currentValue.split('- ', 1)[1];
+        const newValue = currentValue.split('- ')[1];
         textbox.value = newValue;
     } else {
         return;
